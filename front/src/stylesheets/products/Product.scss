@@ -1,0 +1,68 @@
+.Product {
+    display:flex; width: 350px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; gap: 20px;
+    padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 10px; background-color: #fff;
+
+    .productImage {
+        width: 300px; height: 300px;
+    }
+
+    .description {
+        display: flex; width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .productName {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .productPrice {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    .buttonsGroup#hidden {
+        display: none;
+    }
+
+    .buttonsGroup#displayed {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .controllers {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+            align-items: center;
+            gap: 20px;
+            justify-self: flex-end;
+            .controlBtn {
+                outline: none; border: none;
+                background-color: transparent;
+                font-size: 35px;
+                font-weight: 600;
+                width: 30px; height: 30px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            }
+        }
+
+        .productAdd {
+            outline: none; border: none;
+            background-color: #e41053;
+            padding: 15px 40px;
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+    }
+}

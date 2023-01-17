@@ -1,0 +1,97 @@
+.ShoppingItem {
+    display: grid; width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+
+    .itemData {
+        justify-self: center;
+        display: grid; width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center; gap: 10px;
+        font-size: 14px;
+        .name, .price {
+            justify-self: flex-start;
+        }
+        .quantity, .totalPrice {
+            justify-self: flex-end;
+        }
+        .quantity {
+            align-self: flex-start;
+        }
+    } 
+    .itemImage {
+        width: 150px; height: 150px;
+    }
+
+    .itemButtons {
+        justify-self: flex-end; display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        .itemBtn {
+            outline: none; border: none;
+            width: 40px; height: 40px;
+            background-color: #fff;
+            border-radius: 100%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .deleteBtn {
+            &:active {
+                color: red
+            }
+        }
+        .changeBtn {
+            &:active {
+                color: orange;
+            }
+        }
+        .changeBtn#save {
+            &:active {
+                color: green;
+            }
+        }
+
+        .changeAmount#displayed {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            outline: none; border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        .changeAmount::-webkit-inner-spin-button {
+            display: none;
+        }
+        .changeAmount#hidden {
+            display: none;
+        }
+    }
+
+}
+
+@media (max-width: 500px) {
+    .ShoppingItem {
+        .itemImage {
+            width: 100px; height: 100px;
+        }
+
+        .itemData {
+            gap: 5px;
+            font-size: 12px;
+        }
+
+        .itemButtons {
+            .itemBtn {
+                font-size: 20px;
+                width: 30px; height: 30px;
+            }
+
+            .changeAmount#displayed {
+                width: 30px; height: 30px;
+            }
+        }
+    }
+}
+
